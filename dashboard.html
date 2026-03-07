@@ -70,108 +70,23 @@
                     <div class="flex items-center gap-2">
                         <span><img src="./assets/Open-Status.png" alt=""></span>
                         <span>Open</span>
-                        <span><img src="./assets/Closed- Status .png" alt=""></span>
+                        <span><img src="./assets/Closed-Status.png" alt=""></span>
                         <span>Closed</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Loading Spinner -->
+         <div id="loadingSpinner" class="hidden h-[30vh] justify-center items-center">
+            <span class="loading loading-spinner loading-xl text-primary"></span>
+        </div>
+
         <!-- Card Section -->
         <div class="card card-border bg-base-200 w-10/12 mx-auto mt-1 shadow-sm">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
+            <div id="all-issue-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
 
-                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-green-600">
-                    <div class="flex justify-between">
-                        <img src="./assets/Open-Status.png" alt="">
-                        <span class="badge badge-error rounded-full">High</span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Fix navigation menu on mobile devices</h3>
-                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
-                        devices...</p>
-                    <div class="flex gap-1 flex-wrap">
-                        <span class="badge badge-error rounded-full">
-                            <i class="fa-solid fa-bug"></i> Bug
-                        </span>
-                        <span class="badge badge-warning rounded-full">
-                            <i class="fa-regular fa-life-ring"></i> Help Wanted
-                        </span>
-                    </div>
-                    <hr class="border-gray-300">
-                    <div class="text-[#64748B]">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-purple-600">
-                    <div class="flex justify-between">
-                        <img src="./assets/Open-Status.png" alt="">
-                        <span class="badge badge-error">High</span>
-                    </div>
-                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
-                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
-                        devices...</p>
-                    <div class="flex gap-1 flex-wrap">
-                        <span class="badge badge-error">
-                            <i class="fa-solid fa-bug"></i> Bug
-                        </span>
-                        <span class="badge badge-warning">
-                            <i class="fa-regular fa-life-ring"></i> Help Wanted
-                        </span>
-                    </div>
-                    <hr class="border-gray-300">
-                    <div class="text-[#64748B]">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-green-600">
-                    <div class="flex justify-between">
-                        <img src="./assets/Open-Status.png" alt="">
-                        <span class="badge badge-error">High</span>
-                    </div>
-                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
-                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
-                        devices...</p>
-                    <div class="flex gap-1 flex-wrap">
-                        <span class="badge badge-error">
-                            <i class="fa-solid fa-bug"></i> Bug
-                        </span>
-                        <span class="badge badge-warning">
-                            <i class="fa-regular fa-life-ring"></i> Help Wanted
-                        </span>
-                    </div>
-                    <hr class="border-gray-300">
-                    <div class="text-[#64748B]">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-purple-600">
-                    <div class="flex justify-between">
-                        <img src="./assets/Open-Status.png" alt="">
-                        <span class="badge badge-error">High</span>
-                    </div>
-                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
-                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
-                        devices...</p>
-                    <div class="flex gap-1 flex-wrap">
-                        <span class="badge badge-error">
-                            <i class="fa-solid fa-bug"></i> Bug
-                        </span>
-                        <span class="badge badge-warning">
-                            <i class="fa-regular fa-life-ring"></i> Help Wanted
-                        </span>
-                    </div>
-                    <hr class="border-gray-300">
-                    <div class="text-[#64748B]">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
+            <!-- Issue Card loaded here dynamically -->
 
             </div>
         </div>
@@ -221,6 +136,7 @@
         </div>
     </dialog>
 
+    <script src="./script/dashboard.js"></script>
 </body>
 
 </html>

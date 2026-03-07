@@ -18,8 +18,8 @@
 
 <body class="bg-[#F8FAFC]">
     <!-- Navbar -->
-    <div class="container navbar bg-base-100 shadow-sm">
-        <div class="flex-1">
+    <div class="container navbar bg-base-100 shadow-sm flex flex-col sm:flex-row justify-between items-center gap-5">
+        <div class="flex">
             <a class="flex items-center gap-2">
                 <img src="./assets/github-logo.png" alt="" class="h-12 w-12">
                 <p class="text-lg font-bold">GitHub Issues Tracker</p>
@@ -45,7 +45,7 @@
         <!-- Button Section -->
         <div class="card card-border bg-base-100 w-10/12 mx-auto mt-10 shadow-sm">
             <div class="card-body">
-                <div class="flex gap-3">
+                <div class="flex flex-col sm:flex-row gap-3">
                     <button class="btn px-8 active">All</button>
                     <button class="btn  px-8">Open</button>
                     <button class="btn  px-8">Closed</button>
@@ -99,7 +99,7 @@
     <dialog id="issue_details_modal" class="modal">
         <div class="modal-box space-y-4">
             <h3 id="issueTitle" class="text-lg font-bold">Fix navigation menu on mobile devices</h3>
-            <div class="flex gap-6">
+            <div class="flex flex-col sm:flex-row gap-5">
                 <span id="issueStatus" class="badge text-white rounded-full">Opened</span>
                 <ul class="flex gap-6 style-disce text-[#64748B] list-disc">
                     <li id="issueAuthor">Opened by Fahim Ahmed</li>

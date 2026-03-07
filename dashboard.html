@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Issue Tracker | Dashboard</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Daisy UI & Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -12,9 +16,211 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<body>
-    <h1 class="text-3xl text-amber-300">Hello I am dashboard</h1>
-    
+<body class="bg-[#F8FAFC]">
+    <!-- Navbar -->
+    <div class="container navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+            <a class="flex items-center gap-2">
+                <img src="./assets/github-logo.png" alt="" class="h-12 w-12">
+                <p class="text-lg font-bold">GitHub Issues Tracker</p>
+            </a>
+        </div>
+        <div class="flex gap-2">
+            <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                        stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                </svg>
+                <input type="search" required placeholder="Search issues..." />
+            </label>
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Button Section -->
+        <div class="card card-border bg-base-100 w-10/12 mx-auto mt-10 shadow-sm">
+            <div class="card-body">
+                <div class="flex gap-3">
+                    <button class="btn px-8 active">All</button>
+                    <button class="btn  px-8">Open</button>
+                    <button class="btn  px-8">Closed</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Count Section -->
+        <div class="card card-border bg-base-100 w-10/12 mx-auto mt-5 shadow-sm">
+            <div class="card-body">
+                <div class="flex justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-gray-300 p-2 rounded-full">
+                            <img src="./assets/Aperture.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">50 Issues</h3>
+                            <p class="text-[#64748B]">Track and manage your project issues</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <span><img src="./assets/Open-Status.png" alt=""></span>
+                        <span>Open</span>
+                        <span><img src="./assets/Closed- Status .png" alt=""></span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Section -->
+        <div class="card card-border bg-base-200 w-10/12 mx-auto mt-1 shadow-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
+
+                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-green-600">
+                    <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <span class="badge badge-error rounded-full">High</span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Fix navigation menu on mobile devices</h3>
+                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+                    <div class="flex gap-1 flex-wrap">
+                        <span class="badge badge-error rounded-full">
+                            <i class="fa-solid fa-bug"></i> Bug
+                        </span>
+                        <span class="badge badge-warning rounded-full">
+                            <i class="fa-regular fa-life-ring"></i> Help Wanted
+                        </span>
+                    </div>
+                    <hr class="border-gray-300">
+                    <div class="text-[#64748B]">
+                        <p>#1 by john_doe</p>
+                        <p>1/15/2024</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-purple-600">
+                    <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <span class="badge badge-error">High</span>
+                    </div>
+                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
+                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+                    <div class="flex gap-1 flex-wrap">
+                        <span class="badge badge-error">
+                            <i class="fa-solid fa-bug"></i> Bug
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fa-regular fa-life-ring"></i> Help Wanted
+                        </span>
+                    </div>
+                    <hr class="border-gray-300">
+                    <div class="text-[#64748B]">
+                        <p>#1 by john_doe</p>
+                        <p>1/15/2024</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-green-600">
+                    <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <span class="badge badge-error">High</span>
+                    </div>
+                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
+                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+                    <div class="flex gap-1 flex-wrap">
+                        <span class="badge badge-error">
+                            <i class="fa-solid fa-bug"></i> Bug
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fa-regular fa-life-ring"></i> Help Wanted
+                        </span>
+                    </div>
+                    <hr class="border-gray-300">
+                    <div class="text-[#64748B]">
+                        <p>#1 by john_doe</p>
+                        <p>1/15/2024</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl space-y-3 border-t-5 border-purple-600">
+                    <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <span class="badge badge-error">High</span>
+                    </div>
+                    <h3 class="text-xl font-se">Fix navigation menu on mobile devices</h3>
+                    <p class="line-clamp-2 text-[#64748B]">The navigation menu doesn't collapse properly on mobile
+                        devices...</p>
+                    <div class="flex gap-1 flex-wrap">
+                        <span class="badge badge-error">
+                            <i class="fa-solid fa-bug"></i> Bug
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fa-regular fa-life-ring"></i> Help Wanted
+                        </span>
+                    </div>
+                    <hr class="border-gray-300">
+                    <div class="text-[#64748B]">
+                        <p>#1 by john_doe</p>
+                        <p>1/15/2024</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal (Open modal using ID.showModal() -->
+    <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box space-y-4">
+            <h3 class="text-lg font-bold">Fix navigation menu on mobile devices</h3>
+            <div class="flex gap-6">
+                <span class="badge badge-success text-white rounded-full">Opened</span>
+                <ul class="flex gap-6 style-disce text-[#64748B] list-disc">
+                    <li>Opened by Fahim Ahmed</li>
+                    <li>22/02/2026</li>
+                </ul>
+            </div>
+
+            <div class="flex gap-1 flex-wrap">
+                <span class="badge badge-error rounded-full">
+                    <i class="fa-solid fa-bug"></i> Bug
+                </span>
+                <span class="badge badge-warning rounded-full">
+                    <i class="fa-regular fa-life-ring"></i> Help Wanted
+                </span>
+            </div>
+            <p class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+            <div class="bg-gray-100 flex gap-32 p-3">
+                <div>
+                    <p class="text-[#64748B]">Assignee:</p>
+                    <h4 class="font-semibold">Fahim Ahmed</h4>
+                </div>
+                <div>
+                    <p class="text-[#64748B]">Priority:</p>
+                    <span class="badge badge-error rounded-full">High</span>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Close</button>
+                </form>
+            </div>
+
+        </div>
+    </dialog>
+
 </body>
 
 </html>

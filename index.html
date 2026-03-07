@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Issue Tracker</title>
+    <title>Github Issue Tracker | Sign In</title>
     <!-- Daisy UI & Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -25,13 +25,13 @@
                 <div>
                     <fieldset class="fieldset w-xs">
                         <label class="font-semibold">Username</label>
-                        <input type="text" class="input rounded-lg" placeholder="Enter Username" />
+                        <input id="username" type="text" class="input rounded-lg" placeholder="Enter Username" />
                         <span class="text-blue-600">Default: admin</span>
 
                         <label class="font-semibold">Password</label>
-                        <input type="password" class="input rounded-lg" placeholder="Enter Password" />
+                        <input id="password" type="password" class="input rounded-lg" placeholder="Enter Password" />
                         <span class="text-blue-600">Default: admin123</span>
-                        <button class="btn btn-primary btn-block mt-4 rounded-lg">Sign In</button>
+                        <button id="signIn-btn" class="btn btn-primary btn-block mt-4 rounded-lg">Sign In</button>
                     </fieldset>
                 </div>
 
@@ -51,6 +51,8 @@
             </div>
         </div>
     </section>
+
+    <script src="./script/login.js"></script>
 </body>
 
 </html>

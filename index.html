@@ -13,7 +13,44 @@
 </head>
 
 <body>
-    <h2 class="bg-amber-500">Hello</h2>
+    <section class="w-full sm:w-6/12 md:w-4/12 mx-auto my-8">
+        <div class="card w-96 bg-base-100 shadow-lg">
+            <div class="card-body">
+                <div class="flex justify-center flex-col items-center">
+                    <img src="./assets/github-logo.png" alt="">
+                    <h3 class="text-2xl font-semibold mt-3">GitHub Issues Tracker</h3>
+                    <p class="text-[#64748B]">Sign in to manage your issues</p>
+                </div>
+
+                <div>
+                    <fieldset class="fieldset w-xs">
+                        <label class="font-semibold">Username</label>
+                        <input type="text" class="input rounded-lg" placeholder="Enter Username" />
+                        <span class="text-blue-600">Default: admin</span>
+
+                        <label class="font-semibold">Password</label>
+                        <input type="password" class="input rounded-lg" placeholder="Enter Password" />
+                        <span class="text-blue-600">Default: admin123</span>
+                        <button class="btn btn-primary btn-block mt-4 rounded-lg">Sign In</button>
+                    </fieldset>
+                </div>
+
+                <div class="flex items-center">
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                    <span class="px-2 text-gray-700">OR</span>
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-[#64748B] mb-1">Demo Credentials:</p>
+                    <div class="bg-gray-50 py-4 rounded-lg">
+                        <p><b>Username: </b>admin</p>
+                        <p><b>Password: </b>admin123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

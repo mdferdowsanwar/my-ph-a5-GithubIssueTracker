@@ -62,23 +62,27 @@
                             <img src="./assets/Aperture.png" alt="">
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold">50 Issues</h3>
+                            <h3 id="total-issue" class="text-lg font-bold"></h3>
                             <p class="text-[#64748B]">Track and manage your project issues</p>
                         </div>
                     </div>
 
                     <div class="flex items-center gap-2">
-                        <span><img src="./assets/Open-Status.png" alt=""></span>
-                        <span>Open</span>
-                        <span><img src="./assets/Closed-Status.png" alt=""></span>
-                        <span>Closed</span>
+                        <div class="flex flex-col sm:flex-row items-center gap-2">
+                            <span><img src="./assets/Open-Status.png" alt=""></span>
+                            <span>Open</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-2">
+                            <span><img src="./assets/Closed-Status.png" alt=""></span>
+                            <span>Closed</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Loading Spinner -->
-         <div id="loadingSpinner" class="hidden h-[30vh] justify-center items-center">
+        <div id="loadingSpinner" class="hidden h-[30vh] justify-center items-center">
             <span class="loading loading-spinner loading-xl text-primary"></span>
         </div>
 
@@ -86,7 +90,7 @@
         <div class="card card-border bg-base-200 w-10/12 mx-auto mt-1 shadow-sm">
             <div id="all-issue-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
 
-            <!-- Issue Card loaded here dynamically -->
+                <!-- Issue Card loaded here dynamically -->
 
             </div>
         </div>
@@ -107,15 +111,16 @@
                 </ul>
             </div>
 
-            <div class="flex gap-1 flex-wrap">
-                <span class="badge badge-error rounded-full">
+            <div id="issueLabels" class="flex gap-1 flex-wrap">
+                <!-- <span class="badge badge-error rounded-full">
                     <i class="fa-solid fa-bug"></i> Bug
                 </span>
                 <span class="badge badge-warning rounded-full">
                     <i class="fa-regular fa-life-ring"></i> Help Wanted
-                </span>
+                </span> -->
             </div>
-            <p id="issueDescription" class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+            <p id="issueDescription" class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile
+                devices. Need to fix the responsive behavior.</p>
             <div class="bg-gray-100 flex gap-32 p-3">
                 <div>
                     <p class="text-[#64748B]">Assignee:</p>

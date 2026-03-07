@@ -4,6 +4,10 @@ const allIssueContainer = document.getElementById("all-issue-container");
 // Loading Spinner
 const loadingSpinner = document.getElementById("loadingSpinner");
 
+// Total Count
+const totalCount = document.getElementById("total-issue");
+
+
 // Tree details modal (5)
 const issueDetailsModal = document.getElementById("issue_details_modal");
 const issueTitleModal = document.getElementById("issueTitle");
@@ -13,6 +17,7 @@ const issueDateModal = document.getElementById("issueDate");
 const issueDescriptionModal = document.getElementById("issueDescription");
 const issueAssigneeModal = document.getElementById("issueAssignee");
 const issuePriorityModal = document.getElementById("issuePriority");
+const issueLabelsModal = document.getElementById("issueLabels");
 
 // Reusable Loading Spinner
 function showLoadingSpinner() {
@@ -40,6 +45,9 @@ async function loadAllIssues() {
 }
 
 function displayAllIssues(issues) {
+    
+    totalCount.textContent = `${issues.length} Issues`;
+    
     issues.forEach(issue => {
         const issueCard = document.createElement("div");
         issueCard.className = `bg-white p-5 rounded-xl ${issue.status === 'open' ? "border-t-5 border-green-600" : "border-t-5 border-purple-600"}`;
@@ -52,12 +60,7 @@ function displayAllIssues(issues) {
             <h3 onclick="openIssueModal(${issue.id})" class="cursor-pointer text-xl font-semibold">${issue.title}</h3>
             <p class="line-clamp-2 text-[#64748B]">${issue.description}</p>
             <div class="flex gap-1 flex-wrap">
-                <span class="badge badge-error rounded-full text-xs">
-                    <i class="fa-solid fa-bug"></i> Bug
-                </span>
-                <span class="badge badge-warning rounded-full text-xs">
-                    <i class="fa-regular fa-life-ring"></i> Help Wanted
-                </span>
+                ${issue.labels.map(label => `<span class="badge badge-info rounded-full text-xs">${label}</span>`).join(" ")}
             </div>
             <hr class="border-gray-300">
             <div class="text-[#64748B]">
@@ -90,6 +93,8 @@ async function openIssueModal(issueId) {
   issueDateModal.textContent = issueDetails.createdAt;
   issueAssigneeModal.textContent = issueDetails.assignee;
   issuePriorityModal.textContent = issueDetails.priority;
+  issueLabelsModal.innerHTML = issueDetails.labels.map(label => `<span class="badge badge-info rounded-full text-xs">${label}</span>`).join(" ");
+  
   issueDetailsModal.showModal();
 }
 

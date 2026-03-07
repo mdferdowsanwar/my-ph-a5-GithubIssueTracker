@@ -1,8 +1,18 @@
 // Load All Issues and Display
 const allIssueContainer = document.getElementById("all-issue-container");
+
 // Loading Spinner
 const loadingSpinner = document.getElementById("loadingSpinner");
 
+// Tree details modal (5)
+const issueDetailsModal = document.getElementById("issue_details_modal");
+const issueTitleModal = document.getElementById("issueTitle");
+const issueStatusModal = document.getElementById("issueStatus");
+const issueAuthorModal = document.getElementById("issueAuthor");
+const issueDateModal = document.getElementById("issueDate");
+const issueDescriptionModal = document.getElementById("issueDescription");
+const issueAssigneeModal = document.getElementById("issueAssignee");
+const issuePriorityModal = document.getElementById("issuePriority");
 
 // Reusable Loading Spinner
 function showLoadingSpinner() {
@@ -10,11 +20,13 @@ function showLoadingSpinner() {
   loadingSpinner.classList.add("flex");
   allIssueContainer.innerHTML = "";
 }
+
 // Reusable Loading Spinner
 function hideLoadingSpinner() {
   loadingSpinner.classList.add("hidden");
   loadingSpinner.classList.remove("flex");
 }
+
 
 
 
@@ -37,7 +49,7 @@ function displayAllIssues(issues) {
                 <img src="${issue.status === 'open' ? "./assets/Open-Status.png" : "./assets/Closed-Status.png" }" alt="">
                 <span class="badge ${issue.priority === 'high' ? "badge-error" : issue.priority === 'medium' ? "badge-warning" : "badge-neutral" } rounded-full">${issue.priority}</span>
             </div>
-            <h3 class="text-xl font-semibold">${issue.title}</h3>
+            <h3 onclick="openIssueModal(${issue.id})" class="cursor-pointer text-xl font-semibold">${issue.title}</h3>
             <p class="line-clamp-2 text-[#64748B]">${issue.description}</p>
             <div class="flex gap-1 flex-wrap">
                 <span class="badge badge-error rounded-full text-xs">
@@ -57,5 +69,47 @@ function displayAllIssues(issues) {
         allIssueContainer.appendChild(issueCard);
     });
 }
+
+// Tree details modal (5) start
+async function openIssueModal(issueId) {
+  const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${issueId}`);
+  const issue = await response.json();
+  const issueDetails = issue.data;
+  
+  issueTitleModal.textContent  = issueDetails.title;
+  issueDescriptionModal.textContent  = issueDetails.description;
+  issueStatusModal.textContent = issueDetails.status;
+  if(issueStatusModal.textContent === "open"){
+    issueStatusModal.classList.add("badge-success");
+    issueStatusModal.classList.remove("badge-neutral");
+  } else {
+    issueStatusModal.classList.add("badge-neutral");
+    issueStatusModal.classList.remove("badge-success");
+  }
+  issueAuthorModal.textContent = issueDetails.author;
+  issueDateModal.textContent = issueDetails.createdAt;
+  issueAssigneeModal.textContent = issueDetails.assignee;
+  issuePriorityModal.textContent = issueDetails.priority;
+  issueDetailsModal.showModal();
+}
+
+
 // Call load all issues function
 loadAllIssues();
+
+
+// Search Functionality
+// document.getElementById("btn-search").addEventListener("click", () => {
+//     // removeActive();
+//     const input = document.getElementById("input-search");
+//     const inputValue = input.value.trim().toLowerCase();
+
+//     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${inputValue}`)
+//     .then(response => response.json())
+//     .then(data => {
+//         const allIssue = data.data;
+//         const filterWords = allIssue.filter((issue) =>
+//         issue.title.toLowerCase().includes(inputValue));
+//         displayAllIssues(filterWords);
+//     });
+// });

@@ -48,6 +48,16 @@ function displayAllIssues(issues) {
     
     totalCount.textContent = `${issues.length} Issues`;
     
+    allIssueContainer.innerHTML = "";
+
+    if(issues.length === 0){
+      allIssueContainer.innerHTML = `
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-red-500">No Issue Found.</h3>
+        </div> 
+      `;
+    }
+
     issues.forEach(issue => {
         const issueCard = document.createElement("div");
         issueCard.className = `bg-white p-5 rounded-xl ${issue.status === 'open' ? "border-t-5 border-green-600" : "border-t-5 border-purple-600"}`;
@@ -102,19 +112,16 @@ async function openIssueModal(issueId) {
 // Call load all issues function
 loadAllIssues();
 
-
 // Search Functionality
-// document.getElementById("btn-search").addEventListener("click", () => {
+document.getElementById("btn-search").addEventListener("click", async () => {
 //     // removeActive();
-//     const input = document.getElementById("input-search");
-//     const inputValue = input.value.trim().toLowerCase();
+    const input = document.getElementById("input-search");
+    const inputValue = input.value.trim().toLowerCase();
 
-//     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${inputValue}`)
-//     .then(response => response.json())
-//     .then(data => {
-//         const allIssue = data.data;
-//         const filterWords = allIssue.filter((issue) =>
-//         issue.title.toLowerCase().includes(inputValue));
-//         displayAllIssues(filterWords);
-//     });
-// });
+    if(!inputValue) return;
+
+    const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${inputValue}`);
+    const data = await response.json();
+    const allIssue = data.data;
+    displayAllIssues(allIssue);
+});

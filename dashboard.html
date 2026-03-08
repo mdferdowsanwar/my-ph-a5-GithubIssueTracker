@@ -48,9 +48,9 @@
         <div class="card card-border bg-base-100 w-10/12 mx-auto mt-10 shadow-sm">
             <div class="card-body">
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <button class="btn px-8 active">All</button>
-                    <button class="btn  px-8">Open</button>
-                    <button class="btn  px-8">Closed</button>
+                    <button id="tab-all" onclick="switchTab('all')" class="btn px-8">All</button>
+                    <button id="tab-open" onclick="switchTab('open')" class="btn  px-8">Open</button>
+                    <button id="tab-closed" onclick="switchTab('closed')" class="btn  px-8">Closed</button>
                 </div>
             </div>
         </div>
@@ -91,9 +91,13 @@
         <!-- Card Section -->
         <div class="card card-border bg-base-200 w-10/12 mx-auto mt-1 shadow-sm">
             <div id="all-issue-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
-
-                <!-- Issue Card loaded here dynamically -->
-
+                <!-- All Issue Card loaded here dynamically -->All
+            </div>
+            <div id="open-issue-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
+                <!-- Open Issue Card loaded here dynamically -->Open
+            </div>
+            <div id="closed-issue-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
+                <!-- Closed Issue Card loaded here dynamically -->Closed
             </div>
         </div>
 
